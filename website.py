@@ -3,10 +3,11 @@ from markupsafe import escape
 import requests as req
 app = Flask(__name__)
 
-@app.route('/download/', methods=['POST', 'GET'])
+@app.route('/download/', methods=['GET', 'POST'])
 def download():
-    if request.method == "POST":
-        return render_template('download.html.jinja', ytlink=request.form["ytlink"])
+    ytlink=request.args.get("ytlink", 0)
+    if ytlink:
+        return render_template('download.html.jinja', ytlink=ytlink)
     else:
         return render_template('download.html.jinja')
         
