@@ -6,16 +6,20 @@
     <title>Download</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
-<body style="background-color: #0c0c0c; color: white;">
+<body style="background-image: url('https://i.pximg.net/img-original/img/2019/07/19/18/08/35/75801704_p0.png'); color: white;">
     <form method="GET">
         <div class="input-group container mt-5">
-            <input name="ytlink" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            <button type="submit" class="ml-2 btn btn-outline-primary">Primary</button>
+            <input name="ytlink" type="text" class="form-control" placeholder="Youtube Link" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <button type="submit" class="ml-2 btn btn-primary">Get Link</button>
         </div>
     </form>
 
     {% if downloadLink %}
-        <p class="text-center"><a href={{downloadLink}}> İndir</a></p>
+        <form action="{{downloadLink}}">
+            <div class="container mt-2"> 
+                <button class="container btn btn btn-primary" type="submit"> Download </button>
+            </div>
+        </form>
     {% endif %}
 </body>
 </html>
