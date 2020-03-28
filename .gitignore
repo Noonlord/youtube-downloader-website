@@ -1,2 +1,6 @@
 
 *.pyc
+*.part
+*.mp4
+ffmpeg.exe
+youtube-dl.exe
