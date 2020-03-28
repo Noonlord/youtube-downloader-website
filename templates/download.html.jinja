@@ -15,11 +15,11 @@
     </form>
 
     {% if downloadLink %}
-        <form action="{{downloadLink}}">
+        <a href="{{downloadLink}}" download="{{videoName}}">
             <div class="container mt-2"> 
                 <button class="container btn btn btn-primary" type="submit"> Download </button>
             </div>
-        </form>
+        </a>
     {% endif %}
 </body>
 </html>
