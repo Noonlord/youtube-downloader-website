@@ -1,0 +1,34 @@
+body{
+    background-color: #0c0c0c;
+}
+.input{
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+    background-color: #161616;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.ytlinkinput{
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px 20px 5px 20px;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+.buttoninput{
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.downloaddiv{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.image{
+    border-radius: 5px;
+    background-size: cover;
+}

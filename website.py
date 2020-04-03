@@ -21,8 +21,8 @@ def download():
             print(fileUrl)
         soup = BeautifulSoup(urllib.request.urlopen(ytlink))
         videoName = soup.title.string + ".mp4"
-        return render_template('download.html.jinja', downloadLink = fileUrl, videoName = videoName)
+        return render_template('download.html', downloadLink = fileUrl, videoName = videoName)
     else:
-        return render_template('download.html.jinja')
+        return render_template('download.html')
         
 #https://www.youtube.com/watch?v=oBYbxw8f5OI

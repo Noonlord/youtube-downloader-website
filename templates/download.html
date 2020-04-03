@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body id="body">
+    <form method="GET">
+        <div class="input">
+            <input oninput="thumb()" name="ytlink" class="ytlinkinput" type="text" class="form-control" placeholder="Youtube Link">
+            <button class="buttoninput" type="submit">Get Link</button>
+        </div>
+    </form>
+    <div class="image">
+        <img id="thumbImg" src="">
+    </div>
+    {% if downloadLink %}
+        <div class="downloaddiv">
+            <a href="{{downloadLink}}" download="{{videoName}}">
+                <button class="buttoninput" type="submit"> Download </button>
+            </a>
+        </div>
+    {% endif %}
+<script>
+    function thumb(){
+        var link = document.getElementById("linkInput").value;
+        var img = document.createElement("img");
+        var id = link.split("=")[1];
+        var str1 ="https://img.youtube.com/vi/";
+        var str2 ="/mqdefault.jpg";
+        var imgLink = str1.concat(id, str2);
+        document.getElementById("thumbImg").src=imgLink;
+    }
+</script>
+</body>
+</html>
