@@ -14,16 +14,12 @@
         </div>
     </form>
     
-    <div class="image">
-        <img id="thumbImg" src="{{videoThumb}}">
+    <div class="output">
+        <img src="{{videoThumb}}" id="thumbImg">
+        <a href="{{downloadLink}}" download="{{videoName}}">
+            Download
+        </a>
     </div>
-    {% if downloadLink %}
-        <div class="downloaddiv">
-            <a href="{{downloadLink}}" download="{{videoName}}">
-                <button class="buttoninput" type="submit"> Download </button>
-            </a>
-        </div>
-    {% endif %}
 <script>
     function thumb(){
         var link = document.getElementById("linkInput").value;
@@ -37,3 +33,15 @@
 </script>
 </body>
 </html>
+
+<!--
+    <div class="image" id="thumbImg" style="background-image: url('{{videoThumb}}');">
+        {% if downloadLink %}
+            <div class="downloaddiv">
+                <a href="{{downloadLink}}" download="{{videoName}}">
+                    <button class="buttoninput" type="submit"> Download </button>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+-->
