@@ -6,14 +6,26 @@
     <title>Download</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
-<body style="background-image: url('https://i.pximg.net/img-original/img/2019/07/19/18/08/35/75801704_p0.png'); color: white;">
+<body id="body" style="background-image: url('https://i.pximg.net/img-original/img/2019/07/19/18/08/35/75801704_p0.png'); color: white;">
     <form method="GET">
         <div class="input-group container mt-5">
-            <input name="ytlink" type="text" class="form-control" placeholder="Youtube Link" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <input oninput="thumb()" id="linkInput" name="ytlink" type="text" class="form-control" placeholder="Youtube Link" aria-label="Example text with button addon" aria-describedby="button-addon1">
             <button type="submit" class="ml-2 btn btn-primary">Get Link</button>
         </div>
     </form>
+<script>
+    function thumb(){
+        var link = document.getElementById("linkInput").value;
+        var img = document.createElement("img");
+        var id = link.split("=")[1];
+        var str1 ="https://img.youtube.com/vi/";
+        var str2 ="/mqdefault.jpg";
+        var imgLink = str1.concat(id, str2);
+        img.src=imgLink;
+        document.getElementById('body').appendChild(img);
 
+    }
+</script>
     {% if downloadLink %}
         <a href="{{downloadLink}}" download="{{videoName}}">
             <div class="container mt-2"> 
@@ -21,5 +33,6 @@
             </div>
         </a>
     {% endif %}
+
 </body>
 </html>
