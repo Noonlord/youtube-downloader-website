@@ -11,7 +11,7 @@ def download():
     ytlink=request.args.get("ytlink", 0)
     if ytlink:
         print("start")
-        os.system("youtube-dl.exe -o static/%(id)s --format \"bestvideo[height<=480]+bestaudio[ext=m4a]/bestvideo+bestaudio/best\" --merge-output-format mp4 " + ytlink)
+        os.system("youtube-dl -o \"static/%(id)s\" --format \"bestvideo[height<=480]+bestaudio[ext=m4a]/bestvideo+bestaudio/best\" --merge-output-format mp4 " + ytlink)
         print("stop")
         if "youtu.be" in ytlink:
             pass
