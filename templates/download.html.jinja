@@ -13,6 +13,9 @@
             <button type="submit" class="ml-2 btn btn-primary">Get Link</button>
         </div>
     </form>
+    <br>
+    <img id="thumbImg" src="">
+
 <script>
     function thumb(){
         var link = document.getElementById("linkInput").value;
@@ -21,8 +24,7 @@
         var str1 ="https://img.youtube.com/vi/";
         var str2 ="/mqdefault.jpg";
         var imgLink = str1.concat(id, str2);
-        img.src=imgLink;
-        document.getElementById('body').appendChild(img);
+        document.getElementById("thumbImg").src=imgLink;
 
     }
 </script>
