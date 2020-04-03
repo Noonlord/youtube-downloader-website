@@ -21,7 +21,8 @@ def download():
             print(fileUrl)
         soup = BeautifulSoup(urllib.request.urlopen(ytlink))
         videoName = soup.title.string + ".mp4"
-        return render_template('download.html', downloadLink = fileUrl, videoName = videoName)
+        videoThumb = "https://img.youtube.com/vi/" + id + "/mqdefault.jpg"
+        return render_template('download.html', downloadLink = fileUrl, videoName = videoName, videoThumb = videoThumb)
     else:
         return render_template('download.html')
         
